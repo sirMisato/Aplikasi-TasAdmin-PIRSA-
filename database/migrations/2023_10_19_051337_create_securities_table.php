@@ -15,6 +15,7 @@ class CreateSecuritiesTable extends Migration
     {
         Schema::create('securities', function (Blueprint $table) {
             $table->id();
+            $table->string('qrcode');
             $table->string('no_spa');
             $table->string('no_spi');
             $table->string('no_pol');
@@ -22,12 +23,14 @@ class CreateSecuritiesTable extends Migration
             $table->string('ban');
             $table->string('rem');
             $table->string('no_sim');
-            $table->string('no_kartu_ijin_sim');
-            $table->string('nama');
+            $table->string('no_kartu_ijin_masuk');
             $table->string('sepatu_safety');
             $table->string('rompi');
             $table->string('helm');
             $table->string('apar');
+            $table->string('nama_driver');
+            $table->string('posisi');
+            $table->string('status');
             $table->timestamps();
         });
     }

@@ -27,14 +27,14 @@ class CreateUsersTable extends Migration
 
         User::create([
             'name'=>'Super Admin',
-            'email'=>'admin@gmail.com',
+            'email'=>'superadmin@gmail.com',
             'password'=>bcrypt(123),
-            'role' =>'superadmin',
+            'role' =>'super_admin',
 
         ]);
         User::create([
             'name'=>'Security',
-            'email'=>'secuirty@gmail.com',
+            'email'=>'security@gmail.com',
             'password'=>bcrypt(123),
             'role' =>'security',
 

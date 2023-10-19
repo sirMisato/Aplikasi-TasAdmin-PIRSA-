@@ -20,8 +20,8 @@
 
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link  {{request()->is('admin/dashboard') ? 'active' :''}}"
-                        href="{{url('')}}" aria-expanded="false">
+                    <a class="sidebar-link  {{request()->is('dashboard') ? 'active' :''}}"
+                        href="{{url('dashboard')}}" aria-expanded="false">
                         <span>
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
@@ -29,16 +29,77 @@
                     </a>
                 </li>
 
+                @if(auth()->user()->role=='security')
                 <li class="sidebar-item">
                     <a class="sidebar-link {{request()->is('security') ? 'active' :''}}"
-                        href="{{url('')}}" aria-expanded="false">
+                        href="{{url('security')}}" aria-expanded="false">
                         <span>
                             <i class="ti ti-article"></i>
                         </span>
                         <span class="hide-menu">Security</span>
                     </a>
                 </li>
-
+                @elseif(auth()->user()->role=='hse')
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('hse') ? 'active' :''}}"
+                        href="{{url('hse')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">HSE</span>
+                    </a>
+                </li>
+                @elseif(auth()->user()->role=='admin_in')
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('admin_in') ? 'active' :''}}"
+                        href="{{url('admin_in')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Admin In</span>
+                    </a>
+                </li>
+                @elseif(auth()->user()->role=='timbangan_in')
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('timbangan_in') ? 'active' :''}}"
+                        href="{{url('timbangan_in')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Timbangan In</span>
+                    </a>
+                </li>
+                @elseif(auth()->user()->role=='loading_bay')
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('loading_bay') ? 'active' :''}}"
+                        href="{{url('loading_bay')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Loading Bay</span>
+                    </a>
+                </li>
+                @elseif(auth()->user()->role=='timbangan_out')
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('timbangan_out') ? 'active' :''}}"
+                        href="{{url('timbangan_out')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Timbangan Out</span>
+                    </a>
+                </li>
+                @elseif(auth()->user()->role=='admin_out')
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('admin_out') ? 'active' :''}}"
+                        href="{{url('admin_out')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Admin Out</span>
+                    </a>
+                </li>
+                @elseif(auth()->user()->role=='super_admin')
                 <li class="sidebar-item">
                     <a class="sidebar-link {{request()->is('superadmin/akun/*') ? 'active' :''}}"
                         href="{{url('superadmin/akun')}}" aria-expanded="false">
@@ -49,6 +110,10 @@
                     </a>
                 </li>
 
+
+                @endif
+
+              
              
 
             </ul>

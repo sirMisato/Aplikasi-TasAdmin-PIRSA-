@@ -16,6 +16,7 @@ class CreateTimbanganInsTable extends Migration
         Schema::create('timbangan_ins', function (Blueprint $table) {
             $table->id();
             $table->foreignId('admin_in_id')->constrained();
+            $table->string('berat_bersih');
             $table->string('status');
             $table->timestamps();
         });

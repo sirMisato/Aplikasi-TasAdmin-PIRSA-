@@ -16,6 +16,13 @@ class CreateHSESTable extends Migration
         Schema::create('h_s_e_s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('security_id')->constrained();
+            $table->string('cek_fisik_armada');
+            $table->string('kir_head_truck');
+            $table->string('tkir_tangki');
+            $table->string('ijin_katup_pengaman');
+            $table->string('amd');
+            $table->string('kelengkapan');
+            $table->string('catatan');
             $table->string('status');
             $table->timestamps();
         });

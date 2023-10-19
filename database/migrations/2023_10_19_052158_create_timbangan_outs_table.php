@@ -16,6 +16,7 @@ class CreateTimbanganOutsTable extends Migration
         Schema::create('timbangan_outs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('loading_bay_id')->constrained();
+            $table->string('berat_kotor');
             $table->string('status');
             $table->timestamps();
         });
