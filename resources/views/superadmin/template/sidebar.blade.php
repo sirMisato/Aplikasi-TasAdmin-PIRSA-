@@ -39,7 +39,15 @@
                     </a>
                 </li>
 
-              
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{request()->is('superadmin/akun/*') ? 'active' :''}}"
+                        href="{{url('superadmin/akun')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Keloka User</span>
+                    </a>
+                </li>
 
              
 

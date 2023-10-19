@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AkunController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TrakingKendaraanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +16,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('superadmin.dashboard');
+// Route::get('/', function () {
+//     return view('superadmin.dashboard');
+// });
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+Route::post('postlogin', [AuthController::class, 'postlogin']);
+Route::post('postregister', [AuthController::class, 'postregister']);
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::get('/',[AuthController::class,'login'])->name('login');
+
+
+
+Route::middleware(['auth'])->group(function () {  
+    Route::get('/dashboard',[TrakingKendaraanController::class,'dashboard']);
 });
+
+Route::prefix('superadmin')->group(function () {
+    Route::get('/akun',[AkunController::class,'index']);
+    Route::get('/akun/tambah',[AkunController::class,'tambah']);
+    Route::post('/akun/tambah',[AkunController::class,'store']);
+    Route::get('/akun/edit/{id}',[AkunController::class,'edit']);
+    Route::post('/akun/update/{id}',[AkunController::class,'update']);
+    Route::get('/akun/delete/{id}',[AkunController::class,'delete']);
+});
+
+
 
 Route::middleware(['role:superadmin'])->group(function () {  
 });
