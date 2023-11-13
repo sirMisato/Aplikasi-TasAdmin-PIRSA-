@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::middleware(['role:superadmin'])->group(function () {  
+Route::middleware(['role:super_admin'])->group(function () {  
     Route::prefix('superadmin')->group(function () {
         Route::get('/akun',[AkunController::class,'index']);
         Route::get('/akun/tambah',[AkunController::class,'tambah']);
@@ -50,19 +50,35 @@ Route::middleware(['role:security'])->group(function () {
 });
 Route::middleware(['role:hse'])->group(function () {  
     Route::get('/hse',[TrakingKendaraanController::class,'hse']);
+    Route::post('/acc_hse',[TrakingKendaraanController::class,'acc_hse']);
+
 });
 Route::middleware(['role:admin_in'])->group(function () {  
     Route::get('/admin_in',[TrakingKendaraanController::class,'admin_in']);
+    Route::post('/acc_admin_in',[TrakingKendaraanController::class,'acc_admin_in']);
 });
 Route::middleware(['role:timbangan_in'])->group(function () { 
     Route::get('/timbangan_in',[TrakingKendaraanController::class,'timbangan_in']); 
+    Route::post('/acc_timbangan_in',[TrakingKendaraanController::class,'acc_timbangan_in']); 
 });
 Route::middleware(['role:loading_bay'])->group(function () {  
     Route::get('/loading_bay',[TrakingKendaraanController::class,'loading_bay']); 
+    Route::post('/acc_loading_bay',[TrakingKendaraanController::class,'acc_loading_bay']); 
 });
 Route::middleware(['role:timbangan_out'])->group(function () {  
     Route::get('/timbangan_out',[TrakingKendaraanController::class,'timbangan_out']); 
+    Route::post('/acc_timbangan_out',[TrakingKendaraanController::class,'acc_timbangan_out']); 
 });
 Route::middleware(['role:admin_out'])->group(function () {  
     Route::get('/admin_out',[TrakingKendaraanController::class,'admin_out']); 
+    Route::post('/acc_admin_out',[TrakingKendaraanController::class,'acc_admin_out']); 
+});
+
+Route::get('/ip',function(){
+$check =geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+if ($check->ip === '::1') {
+        // Convert IPv6 loopback to its IPv4 equivalent
+        $check->ip = '127.0.0.1';
+    }
+return $check->toArray();
 });

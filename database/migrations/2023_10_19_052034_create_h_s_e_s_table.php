@@ -22,8 +22,10 @@ class CreateHSESTable extends Migration
             $table->string('ijin_katup_pengaman');
             $table->string('amd');
             $table->string('kelengkapan');
+            $table->string('aproval');
             $table->string('catatan');
-            $table->string('status');
+            $table->string('list_hse');
+            // $table->string('status');
             $table->timestamps();
         });
     }

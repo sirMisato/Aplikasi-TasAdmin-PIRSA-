@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AdminOut extends Model
+class Log extends Model
 {
     use HasFactory;
-    protected $fillable =[
-    'timbangan_out_id','status'
-    ];
+    protected $fillable =['username','role','ip'];
 }

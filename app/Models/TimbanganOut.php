@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TimbanganOut extends Model
 {
     use HasFactory;
+    protected $fillable =[
+'loading_bay_id','status','berat_kotor'
+    ];
 }

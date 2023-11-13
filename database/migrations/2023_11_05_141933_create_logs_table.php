@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTimbanganInsTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTimbanganInsTable extends Migration
      */
     public function up()
     {
-        Schema::create('timbangan_ins', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('admin_in_id')->constrained();
-            $table->string('berat_bersih');
-            // $table->string('status');
+            $table->string('username');
+            $table->string('role');
+            $table->string('ip');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTimbanganInsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timbangan_ins');
+        Schema::dropIfExists('logs');
     }
 }

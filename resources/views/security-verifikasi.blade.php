@@ -60,10 +60,7 @@
                 <label for="nama_driver">Nama Driver</label>
                 <input type="text" name="nama_driver" class="form-control"required>
             </div>
-            <div class="form-group">
-                <label for="safety_sepatu">Sepatu Safety</label>
-                <input type="text" name="safety_sepatu" class="form-control"required>
-            </div>
+        
            
             <br>
             <b><label for="no_kartu_ijin_masuk">Safety</label></b>

@@ -71,14 +71,14 @@ class CreateUsersTable extends Migration
             'name'=>'Timbangan OUT',
             'email'=>'timbanganout@gmail.com',
             'password'=>bcrypt(123),
-            'role' =>'timbanganout',
+            'role' =>'timbangan_out',
 
         ]);
         User::create([
             'name'=>'Loading Bay',
-            'email'=>'loadinbay@gmail.com',
+            'email'=>'loadingbay@gmail.com',
             'password'=>bcrypt(123),
-            'role' =>'loadingbay',
+            'role' =>'loading_bay',
 
         ]);
     }

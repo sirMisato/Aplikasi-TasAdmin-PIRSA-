@@ -16,6 +16,43 @@
         }
     </style>
     @stack('css')
+    <style>
+        .containers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+        }
+        .cards {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Rata tengah vertikal */
+            align-items: center; /* Rata tengah horizontal */
+            color: white;
+        }
+        .yellow {
+            background-color: #fcbf49; /* Warna kuning */
+        }
+        .red {
+            background-color: #ef476f; /* Warna merah */
+        }
+        .blue {
+            background-color: #0077b6; 
+        }
+        @media (max-width: 768px) {
+            .containers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .containers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </head>
 
