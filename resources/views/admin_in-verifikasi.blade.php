@@ -119,9 +119,9 @@
 
         <label for="validasi">validasi</label>
         <select id="validasi" name="validasi" class="form-control">
-            <option value="start"> START</option>
-            <option value="stop">STOP</option>
-            <option value="done">DONE</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
         </select>
 
 

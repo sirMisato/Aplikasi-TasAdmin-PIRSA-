@@ -87,15 +87,16 @@
                         </td>
                         <td class="border-bottom-0">
 
-                            @if($data->status=='start')
-                            <div>
-                                <a href="#" aria-disabled="true"><span class="badge bg-gray rounded-3 fw-semibold text-black">{{$data->status}}</span></a>
-                            </div>
-                            @elseif($data->status=='stop')
+
+                            @if($data->status=='Rejected')
                             <div>
                                 <a href="#" aria-disabled="true"><span class="badge bg-danger rounded-3 fw-semibold text-black">{{$data->status}}</span></a>
                             </div>
-                            @elseif($data->status=='done')
+                            @elseif($data->status=='Pending')
+                            <div>
+                                <a href="#" aria-disabled="true"><span class="badge bg-gray rounded-3 fw-semibold text-black">{{$data->status}}</span></a>
+                            </div>
+                            @elseif($data->status=='Approved')
                             <div>
                                 <a href="#" aria-disabled="true"><span class="badge bg-success rounded-3 fw-semibold text-black">{{$data->status}}</span></a>
                             </div>

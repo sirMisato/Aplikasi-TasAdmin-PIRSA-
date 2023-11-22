@@ -44,7 +44,7 @@ class TrakingKendaraanController extends Controller
         $req= $request->all();
         
         $req['posisi'] = auth()->user()->role;
-        $req['status'] = 'start';
+        $req['status'] = 'Approved';
         $req['qrcode'] = strtoupper(Str::random(8));
 
 
@@ -88,7 +88,7 @@ class TrakingKendaraanController extends Controller
 
         Security::where('id',$request->security_id)->update([
             'posisi'=>'HSE',
-             'status' => 'start',
+             'status' => 'Approved',
         ]);
 
         // return $securityData;
@@ -149,7 +149,7 @@ class TrakingKendaraanController extends Controller
         $timbanganin= [
          'admin_in_id' => $data['admin_in_id'],
          'berat_bersih' => $data['berat_bersih'],
-         'status' => 'done',
+         'status' => 'Approved',
  
  
      ];
